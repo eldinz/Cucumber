@@ -1,0 +1,25 @@
+//     How to handle windows file upload?
+//
+        WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+
+        // Enter the file path onto the file-selection input field
+        uploadElement.sendKeys("C:/Users/moeel/Pictures/oracle_java.jpg");
+
+        // Check the "I accept the terms of service" check box
+        driver.findElement(By.id("terms")).click();
+
+        // Click the "UploadFile" button
+        driver.findElement(By.name("send")).click();
+        
+        // Verification Step
+        String actual = driver.findElement(By.id("spanMessage")).getText()
+        String expected = "Expected Text";
+		assertEquals(actual, expected);
+		System.out.println("Actual Text is:   " + actual + "     " + "Expected Text is:   " + expected);
+	
+		if (actual == expected){
+		System.out.println("......._______***File upload Success***_______.......");
+		} else 
+			System.out.println("......._______***File upload Not Success***_______.......");
+		
+//-------------------------------------------------------------------------------------------------------------		
